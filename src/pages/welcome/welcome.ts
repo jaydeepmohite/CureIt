@@ -41,8 +41,10 @@ export class WelcomePage {
     console.log('ionViewDidLoad WelcomePage');
   }
 
-  nextSlide(){
-    this.slides.slideNext();
+  skipToLast(){
+    while(!this.slides.isEnd()) {
+      this.slides.slideNext();
+    }
   }
 
   goToLogin(){

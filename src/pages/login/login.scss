@@ -1,12 +1,8 @@
 page-login {
 
-  p {
-    font-size: 1.8rem;
-  }
-
   .app-icon-container {
-    padding-top: 44px;
-    padding-bottom: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .app-icon-zoom {
@@ -14,12 +10,12 @@ page-login {
   }
 
   .sign-in-button-container {
-    padding-top: 40px;
+    padding-top: 10px;
   }
 
   .validator-error {
     color: color($colors, danger);
-    padding-top: 8px;
+    padding-top: 4px;
     padding-left: 16px;
   }
 

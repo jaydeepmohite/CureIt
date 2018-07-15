@@ -53,6 +53,38 @@
       </ion-col>
     </ion-row>
 
+    <ion-row>
+      <ion-col text-center>
+        <ion-label>Login via Social</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button block style="background-color:#3b5998" (click)="onFacebookLogin()">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block style="background-color:#d34836" (click)="onGooglePlusLogin()">
+          <ion-icon name="logo-googleplus"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button block style="background-color:#1DA1F2" (click)="onTwitterLogin()">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block style="background-color:#8a3ab9" (click)="onInstagramLogin()">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
   </form>
 
 </ion-content>

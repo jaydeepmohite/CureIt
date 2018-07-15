@@ -50,10 +50,30 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  onFacebookLogin(){
+    this.presentToast("Facebook Login Success");
+    this.navCtrl.setRoot(TabsPage).catch();
+  }
+
+  onGooglePlusLogin(){
+    this.presentToast("Google+ Login Success");
+    this.navCtrl.setRoot(TabsPage).catch();
+  }
+
+  onTwitterLogin(){
+    this.presentToast("Twitter Login Success");
+    this.navCtrl.setRoot(TabsPage).catch();
+  }
+
+  onInstagramLogin(){
+    this.presentToast("Instagram Login Success");
+    this.navCtrl.setRoot(TabsPage).catch();
+  }
+
   presentToast(text){
     const toast = this.toastController.create({
       message: text,
-      duration: 3000
+      duration: 1000
     });
     toast.present();
   }
