@@ -1,0 +1,58 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content no-bounce padding class="login">
+
+  <ion-row class="app-icon-container">
+    <ion-col text-center>
+      <ion-icon name="ionic" class="app-icon-zoom" color="primary"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <form [formGroup]="credentialsForm">
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input [formControl]="credentialsForm.controls['email']"
+                 type="email"></ion-input>
+    </ion-item>
+
+    <div *ngIf="!credentialsForm.controls.email.valid &&
+        credentialsForm.controls.email.dirty"
+         class="validator-error">
+      Please enter a valid email.
+    </div>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input [formControl]="credentialsForm.controls['password']"
+                 type="password"></ion-input>
+    </ion-item>
+
+    <div *ngIf="!credentialsForm.controls.password.valid &&
+        credentialsForm.controls.password.dirty"
+         class="validator-error">
+      Please enter a valid password.
+    </div>
+
+    <ion-row class="sign-in-button-container">
+      <ion-col text-center>
+        <button ion-button block color="primary"
+                [disabled]="!credentialsForm.valid" (click)="onLogin()">
+          Login
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button clear color="primary"
+                (click)="onForgotPassword()">
+          Forgot your password?
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+</ion-content>
