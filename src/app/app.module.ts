@@ -5,39 +5,32 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { WelcomePage } from "../pages/welcome/welcome";
-import { LoginPage } from "../pages/login/login";
-import { TabsPage } from "../pages/tabs/tabs";
-import { ProfilePage } from "../pages/profile/profile";
-import { TimelinePage } from "../pages/timeline/timeline";
-import { ExpertPage } from "../pages/expert/expert";
-import { FundraiserPage } from "../pages/fundraiser/fundraiser";
+import {WelcomePageModule} from "../pages/welcome/welcome.module";
+import {LoginPageModule} from "../pages/login/login.module";
+import {TabsPageModule} from "../pages/tabs/tabs.module";
+import {ProfilePageModule} from "../pages/profile/profile.module";
+import {TimelinePageModule} from "../pages/timeline/timeline.module";
+import {ExpertPageModule} from "../pages/expert/expert.module";
+import {FundraiserPageModule} from "../pages/fundraiser/fundraiser.module";
 
 @NgModule({
   declarations: [
-    MyApp,
-    WelcomePage,
-    LoginPage,
-    TabsPage,
-    ProfilePage,
-    TimelinePage,
-    ExpertPage,
-    FundraiserPage
+    MyApp
   ],
   imports: [
     BrowserModule,
+    WelcomePageModule,
+    LoginPageModule,
+    TabsPageModule,
+    ProfilePageModule,
+    TimelinePageModule,
+    ExpertPageModule,
+    FundraiserPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    WelcomePage,
-    LoginPage,
-    TabsPage,
-    ProfilePage,
-    TimelinePage,
-    ExpertPage,
-    FundraiserPage
+    MyApp
   ],
   providers: [
     StatusBar,
