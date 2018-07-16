@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "db.io/Hack 2018",
+  "main": "server.js",
+  "author": "Jaydeep Mohite",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
