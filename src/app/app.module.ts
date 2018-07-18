@@ -12,6 +12,9 @@ import {ProfilePageModule} from "../pages/profile/profile.module";
 import {TimelinePageModule} from "../pages/timeline/timeline.module";
 import {ExpertPageModule} from "../pages/expert/expert.module";
 import {FundraiserPageModule} from "../pages/fundraiser/fundraiser.module";
+import {HttpClientModule} from "@angular/common/http";
+import {EmojiProvider} from "../providers/emoji";
+import {ChatModule} from "../pages/chat/chat.module";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,11 @@ import {FundraiserPageModule} from "../pages/fundraiser/fundraiser.module";
     TimelinePageModule,
     ExpertPageModule,
     FundraiserPageModule,
-    IonicModule.forRoot(MyApp)
+    ChatModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages:true
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +42,8 @@ import {FundraiserPageModule} from "../pages/fundraiser/fundraiser.module";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EmojiProvider
   ]
 })
 export class AppModule {}

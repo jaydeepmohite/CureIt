@@ -15,7 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ExpertPage {
 
+  toUser : {toUserId: string, toUserName: string};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.toUser = {
+      toUserId:'210000198410281948',
+      toUserName:'Dr. Henry Gray'
+    }
   }
 
   ionViewDidLoad() {

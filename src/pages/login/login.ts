@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastController } from "ionic-angular";
 import { regexValidators } from '../validators/validator';
@@ -20,7 +20,7 @@ export class LoginPage {
 
   credentialsForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, public toastController: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, public toastController: ToastController, public loadingController: LoadingController) {
     this.credentialsForm = this.formBuilder.group({
       email: [
         '', Validators.compose([
@@ -51,8 +51,21 @@ export class LoginPage {
   }
 
   onFacebookLogin(){
-    this.presentToast("Facebook Login Success");
-    this.navCtrl.setRoot(TabsPage).catch();
+
+    let loading = this.loadingController.create({
+      content: 'Please wait...'
+    });
+
+    loading.present();
+
+    loading.onDidDismiss(() => {
+      this.presentToast("Facebook Login Success");
+      this.navCtrl.setRoot(TabsPage).catch();
+    })
+
+    setTimeout(() => {
+      loading.dismiss();
+    }, 3000);
   }
 
   onGooglePlusLogin(){

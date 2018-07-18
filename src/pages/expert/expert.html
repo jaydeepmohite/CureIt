@@ -15,5 +15,15 @@
 
 
 <ion-content padding>
-Expert Section
+  <ion-list>
+
+    <ion-item navPush="Chat"
+              [navParams]="toUser">
+      <ion-avatar item-left>
+        <img src="./assets/to-user.jpg">
+      </ion-avatar>
+      <h2>Dr. Henry Gray</h2>
+      <p>If at first you don’t succeed, call it version 1.0</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
